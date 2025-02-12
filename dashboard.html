@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logout</title>
+    <title>Dashboard</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -21,30 +21,33 @@
         h2 {
             color: #333;
         }
-        button {
-            background-color: #4CAF50;
+        p {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+        .logout-btn {
+            background-color: #ff4b5c;
             color: white;
             border: none;
             padding: 10px 20px;
             font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
         }
-        button:hover {
-            background-color: #45a049;
+        .logout-btn:hover {
+            background-color: #e04352;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Você saiu da sua conta.</h2>
-        <p>Clique no botão abaixo para voltar ao login.</p>
-        <a href="{{ url_for('login') }}">
-            <button>Voltar para o Login</button>
-        </a>
+        <h2>Bem-vindo, {{ username }}!</h2>
+        <p>Você está logado no sistema.</p>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Sair</a>
     </div>
 
 </body>
 </html>
-
